@@ -1,0 +1,66 @@
+ <!-- index file -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <title>Test</title>
+        <link rel="stylesheet" href="/styles/resets.scss" />
+        <link rel="stylesheet" href="/styles/base.scss" />
+        <link rel="stylesheet" href="/styles/header.scss" />
+        <link rel="stylesheet" href="/styles/form.scss" />
+        <link rel="stylesheet" href="/styles/footer.scss" />
+    </head>
+
+    <body>
+        <header>
+            <div class="">
+                Logo
+            </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <form class="" onsubmit="return Client.handleSubmit(event)">
+                    <input id="name" type="text" name="input" value="" placeholder="Name" />
+                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" />
+                </form>
+            </section>
+
+            <section>
+                <strong>Form Results:</strong>
+
+                <table style="width: 100%;">
+                    <tr>
+                        <th>Model</th>
+
+                        <th>Agreement</th>
+                        <th>Content</th>
+                    </tr>
+                    <tr>
+                        <td><div id="model"></div></td>
+
+                        <td><div id="agreement"></div></td>
+                        <td><div id="content"></div></td>
+                    </tr>
+                </table>
+            </section>
+        </main>
+
+        <footer>
+            <p>This is a footer</p>
+        </footer>
+        <script>
+            // Check that service workers are supported
+            if ("serviceWorker" in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener("load", () => {
+                    navigator.serviceWorker.register("/service-worker.js");
+                });
+            }
+        </script>
+    <script type="text/javascript" src="main.js"></script></body>
+</html>
